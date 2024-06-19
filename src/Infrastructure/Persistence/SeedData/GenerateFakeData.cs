@@ -13,13 +13,7 @@ namespace Infrastructure.Persistence.SeedData
             try
             {
 
-                if (!await context.products.AnyAsync())
-                {
-                    var products = Products();
-                    await context.products.AddRangeAsync(products);
-                    await context.SaveChangesAsync();
-
-                }
+              
                 if (!await context.productstype.AnyAsync())
                 {
                     var brands = ProductBrands();
@@ -31,6 +25,13 @@ namespace Infrastructure.Persistence.SeedData
                     var types = ProductTypes();
                     await context.productstype.AddRangeAsync(types);
                     await context.SaveChangesAsync();
+                }
+                if (!await context.products.AnyAsync())
+                {
+                    var products = Products();
+                    await context.products.AddRangeAsync(products);
+                    await context.SaveChangesAsync();
+
                 }
             }
             catch (Exception ex)
@@ -53,6 +54,10 @@ namespace Infrastructure.Persistence.SeedData
                         Summary =   "summary",
                         Price=15000,
                         PictureUrl="",
+                           ProductTypeId=1,
+ ProductBrandId=1,
+  Name="product1",
+   
 
                     }
                     };
