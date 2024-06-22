@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
-namespace Infrastructure.Persistence
+namespace Infrastructure.Persistence.Context
 {
     public class ApplicationDbContext : DbContext
     {

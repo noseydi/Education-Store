@@ -1,4 +1,5 @@
 ﻿using Domain.Entities;
+using Infrastructure.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
@@ -54,8 +55,8 @@ namespace Infrastructure.Persistence.SeedData
                         Summary =   "summary",
                         Price=15000,
                         PictureUrl="",
-                           ProductTypeId=1,
- ProductBrandId=1,
+                           ProductTypeId=3,
+ ProductBrandId=3,
   Name="product1",
    
 
@@ -69,16 +70,16 @@ namespace Infrastructure.Persistence.SeedData
                         {
                     new()
                     {
-                        Description = "111111111111",
-                        Title= "Title1111111111111111",
-                        Summary =   "summary111111111111111",
+                        Description = "brand 1 boofaloo",
+                        Title= "Title",
+                        Summary =   "summary boofalo",
 
                     },
                     new()
                     {
-                        Description = "222222222222222",
-                        Title= "Title2222222222222222",
-                        Summary =   "summary2222222222222222",
+                        Description = "brand 2 mashhad",
+                        Title= "Title",
+                        Summary =   "summary mashhad",
 
                     }
                     };
@@ -89,16 +90,16 @@ namespace Infrastructure.Persistence.SeedData
                         {
                     new()
                     {
-                        Description = "11111111",
+                        Description = "type 1_ shoes",
                         Title= "Title",
-                        Summary =   "summary11111111",
+                        Summary =   "summary type 1 ",
                     },
                       new()
                     {
-                        Description = "22222",
+                        Description = "type 2 _ bags",
                         Title= "Title",
-                        Summary =   "summary2222222222",
-                    }
+                        Summary =   "summary type 2",
+                      }
                     };
         }
 
