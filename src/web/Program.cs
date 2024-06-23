@@ -1,3 +1,4 @@
+using Application;
 using Infrastructure;
 using Infrastructure.Persistence;
 using Infrastructure.Persistence.SeedData;
@@ -8,6 +9,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddApplicationServices();
+
 builder.Services.AddInfrastructureServices(builder.Configuration);
 builder.AddWebConfigureService();
 var app = builder.Build();
