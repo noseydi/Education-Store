@@ -10,7 +10,7 @@ namespace Infrastructure.Persistence.Context
         // public DbSet<Products> products => Set<Products>();
         //public DbSet<ProductType> productstype => Set<ProductType>();
         //public DbSet<ProductBrand> productbrand => Set<ProductBrand>();
-        public DbSet<Products> products { get; set; }
+        public DbSet<Product> products { get; set; }
         public DbSet<ProductType> productstype { get; set; }
         public DbSet<ProductBrand> productbrand { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)

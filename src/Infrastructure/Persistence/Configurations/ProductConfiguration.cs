@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Infrastructure.Persistence.Configurations
 {
-    public class ProductConfiguration : IEntityTypeConfiguration<Products>
+    public class ProductConfiguration : IEntityTypeConfiguration<Product>
     {
-        public void Configure(EntityTypeBuilder<Products> builder)
+        public void Configure(EntityTypeBuilder<Product> builder)
         {
             builder.Property(x => x.PictureUrl).IsRequired().HasMaxLength(100);
             builder.Property(x => x.Price).IsRequired().HasMaxLength(100);

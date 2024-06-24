@@ -3,7 +3,7 @@
 
 namespace Domain.Entities
 {
-    public class Products : BaseAuditableEntity, ICommands
+    public class Product : BaseAuditableEntity, ICommands
     {
         public string Title { get; set; }
         public string Name { get; set; }

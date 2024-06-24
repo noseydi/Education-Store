@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Product\Commands\" />
+    <Folder Include="Features\Products\Commands\" />
     <Folder Include="Interfaces\" />
     <Folder Include="Common\" />
     <Folder Include="Dtos\" />

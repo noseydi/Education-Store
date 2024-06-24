@@ -44,9 +44,9 @@ namespace Infrastructure.Persistence.SeedData
 
 
 
-        public static List<Products> Products()
+        public static List<Product> Products()
         {
-            return new List<Products>()
+            return new List<Product>()
                         {
                     new()
                     {

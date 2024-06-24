@@ -1,4 +1,6 @@
 ﻿using Application.Contracts;
+using Application.Features.Products.Queries.GetAll;
+using Domain.Entities;
 using Domain.Entities.Base;
 using Infrastructure.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
@@ -21,16 +23,9 @@ namespace Infrastructure.Persistence
             _dbset = _context.Set<T>();
         }
 
-        public async Task<T> AddAsync(T entity ,CancellationToken cancellationtoken)
+        public async Task<T> GetByIdAsync(int id, CancellationToken cancellationToken)
         {
-            await _dbset.AddAsync( entity,  cancellationtoken);
-            return entity;
-
-        }
-
-        public void  Delete(T entity)
-        {
-            _dbset.Remove(entity);
+            return await _dbset.FindAsync(id, cancellationToken);
         }
 
         public async Task<IReadOnlyList<T>> GetAllAsync(CancellationToken cancellationToken)
@@ -38,9 +33,11 @@ namespace Infrastructure.Persistence
             return await _dbset.ToListAsync(cancellationToken);
         }
 
-        public async Task<T> GetByIdAsync(int id , CancellationToken cancellationToken)
+        public async Task<T> AddAsync(T entity ,CancellationToken cancellationtoken)
         {
-            return await _dbset.FindAsync(id, cancellationToken);
+            await _dbset.AddAsync( entity,  cancellationtoken);
+            return entity;
+
         }
 
         public Task<T> UpdateAsync(T entity)
@@ -48,5 +45,12 @@ namespace Infrastructure.Persistence
             _context.Entry(entity).State = EntityState.Modified;
             return Task.FromResult(entity);
         }
+
+        public void  Delete(T entity)
+        {
+            _dbset.Remove(entity);
+        }
+
+       
     }
 }
