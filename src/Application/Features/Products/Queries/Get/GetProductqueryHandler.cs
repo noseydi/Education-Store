@@ -9,10 +9,14 @@ using System.Threading.Tasks;
 
 namespace Application.Features.Products.Queries.Get
 {
-    /* public class GetProductqueryHandler : IRequestHandler<GetProductQuery , Product>
+     public class GetProductqueryHandler : IRequestHandler<GetProductQuery , Product>
 
      {
          private readonly IUnitOfWork _uow;
+        public GetProductqueryHandler(IUnitOfWork uow)
+        {
+            _uow = uow;
+        }
 
         public async Task<Product> Handle(GetProductQuery request, CancellationToken cancellationToken)
          {
@@ -22,5 +26,5 @@ namespace Application.Features.Products.Queries.Get
          }
       
 
-}*/
+}
 }

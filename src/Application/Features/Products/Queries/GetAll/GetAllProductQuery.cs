@@ -9,6 +9,6 @@ namespace Application.Features.Products.Queries.GetAll
 {
     public class GetAllProductQuery : IRequest<IEnumerable<Domain.Entities.Product>>
     {
-        public int MyProperty { get; set; }
+        public int id { get; set; }
     }
 }

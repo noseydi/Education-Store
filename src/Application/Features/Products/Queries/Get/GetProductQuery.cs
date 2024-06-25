@@ -8,12 +8,13 @@ using System.Threading.Tasks;
 
 namespace Application.Features.Products.Queries.Get
 {
-    internal class GetProductQuery: IRequest<Product>
+    public class GetProductQuery: IRequest<Product>
     {
         public int Id { get; set; }
         public GetProductQuery(int id)
         {
             Id = id;
         }
+
     }
 }
