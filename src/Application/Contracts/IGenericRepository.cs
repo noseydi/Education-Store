@@ -15,6 +15,6 @@ namespace Application.Contracts
         Task<IReadOnlyList<T>> GetAllAsync(CancellationToken cancellationToken);
         Task<T>AddAsync(T entity,CancellationToken cancellationtoken);
         Task<T> UpdateAsync(T entity);
-         void Delete(T entity);
+         void Delete(T entity , CancellationToken cancellationToken);
     }
 }

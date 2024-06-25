@@ -16,7 +16,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddApplicationServices();
 
 builder.Services.AddInfrastructureServices(builder.Configuration);
-builder.AddWebConfigureService();
+builder.AddWebConfigureService(builder.Configuration);
 var app = builder.Build();
 await app.AddWebAppService().ConfigureAwait(false);
 

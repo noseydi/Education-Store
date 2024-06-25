@@ -12,6 +12,11 @@ namespace Application.Features.Products.Queries.GetAll
     public class GetAllProductHandler : IRequestHandler<GetAllProductQuery,IEnumerable<Product>>
     {
         private readonly IUnitOfWork _uow;
+        public GetAllProductHandler(IUnitOfWork uow)
+        {
+            _uow = uow;
+        }
+
         public async Task<IEnumerable<Product>> Handle(GetAllProductQuery request , CancellationToken cancellationToken)
         {
             return await _uow.Repository<Product>().GetAllAsync(cancellationToken);

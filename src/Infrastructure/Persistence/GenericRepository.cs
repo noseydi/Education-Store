@@ -25,7 +25,7 @@ namespace Infrastructure.Persistence
 
         public async Task<T> GetByIdAsync(int id, CancellationToken cancellationToken)
         {
-            return await _dbset.FindAsync(id, cancellationToken);
+            return await _dbset.FirstOrDefaultAsync( x => x.Id == id, cancellationToken);
         }
 
         public async Task<IReadOnlyList<T>> GetAllAsync(CancellationToken cancellationToken)
@@ -46,9 +46,11 @@ namespace Infrastructure.Persistence
             return Task.FromResult(entity);
         }
 
-        public void  Delete(T entity)
+        public async void  Delete(T entity , CancellationToken cancellationToken         )
         {
-            _dbset.Remove(entity);
+            var record = await GetByIdAsync(entity.Id , cancellationToken);
+            record.IsDelete = true; 
+             await UpdateAsync(entity);
         }
 
        
