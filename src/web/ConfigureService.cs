@@ -45,7 +45,7 @@ public static class ConfigureService
 
         app.UseAuthorization();
 
-        app.MapRazorPages();
+       // app.MapRazorPages();
 
         await app.RunAsync();
         return app;
