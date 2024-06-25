@@ -35,18 +35,17 @@ public static class ConfigureService
             logger.LogError(ex, message: ex.Message);
         }
         // Configure the HTTP request pipeline.
-        if (!app.Environment.IsDevelopment())
+        if (app.Environment.IsDevelopment())
         {
-            app.UseExceptionHandler("/Error");
+            //app.UseExceptionHandler("/Error");
+            app.UseSwagger();
+            app.UseSwaggerUI();
         }
-        app.UseStaticFiles();
-
-        app.UseRouting();
 
         app.UseAuthorization();
 
        // app.MapRazorPages();
-
+       app.MapControllers();
         await app.RunAsync();
         return app;
     }

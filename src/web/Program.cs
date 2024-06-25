@@ -18,5 +18,7 @@ builder.Services.AddApplicationServices();
 builder.Services.AddInfrastructureServices(builder.Configuration);
 builder.AddWebConfigureService();
 var app = builder.Build();
+await app.AddWebAppService().ConfigureAwait(false);
+
 
 //await app.AddWebAppService().ConfigureAwait(false);
