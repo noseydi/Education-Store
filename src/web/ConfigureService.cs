@@ -1,11 +1,11 @@
 ﻿using Infrastructure.Persistence.Context;
 using Infrastructure.Persistence.SeedData;
 using Microsoft.EntityFrameworkCore;
-using web.Extensions;
+using Web.Extensions;
 using Web.Middleware;
 
 
-namespace web;
+namespace Web;
 
 public static class ConfigureService
 {

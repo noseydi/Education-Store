@@ -2,11 +2,11 @@
 using Application.Features.Products.Queries.Get;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using web.common;
+using Web.common;
 using Domain.Entities;
 using MassTransit.Futures.Contracts;
 
-namespace web.controllers
+namespace Web.controllers
 {
     public class ProductController : BaseApiController
     {
@@ -17,11 +17,13 @@ namespace web.controllers
         }
         
         [HttpGet("id:int")]
-        public async Task<ActionResult<Product>> Get([FromRoute] int id, CancellationToken cancellationToken)
+        public async Task<ActionResult<Product>> Get( int id, CancellationToken cancellationToken)
         {
             return Ok(await Mediatr.Send(new GetProductQuery(id), cancellationToken));
         }
+       
 }
+
 }
     
 

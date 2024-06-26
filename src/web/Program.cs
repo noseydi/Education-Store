@@ -3,7 +3,7 @@ using Infrastructure;
 using Infrastructure.Persistence;
 using Infrastructure.Persistence.SeedData;
 using Microsoft.EntityFrameworkCore;
-using web;
+using Web;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);

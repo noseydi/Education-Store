@@ -1,4 +1,5 @@
 ﻿using Application.Contracts;
+using Application.Contracts.Specification;
 using Application.Features.Products.Queries.GetAll;
 using Domain.Entities;
 using Domain.Entities.Base;
@@ -7,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -53,6 +55,24 @@ namespace Infrastructure.Persistence
              await UpdateAsync(entity);
         }
 
-       
+        Task<bool> IGenericRepository<T>.AnyAsync(Expression<Func<T, bool>> expression, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<bool> IGenericRepository<T>.AnyAsync(CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<T> IGenericRepository<T>.GetEntityWithSpec(ISpecification<T> spec)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<IReadOnlyList<T>> IGenericRepository<T>.ListAsyncSpec(ISpecification<T> spec)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

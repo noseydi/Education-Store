@@ -1,6 +1,6 @@
 ﻿using Microsoft.OpenApi.Models;
 
-namespace web.Extensions
+namespace Web.Extensions
 {
     public static class SwaggerServiceExtension
     {
