@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Web.common;
 using Domain.Entities;
 using MassTransit.Futures.Contracts;
+using Application.Dtos.Products;
 
 namespace Web.controllers
 {
@@ -17,7 +18,7 @@ namespace Web.controllers
         }
         
         [HttpGet("id:int")]
-        public async Task<ActionResult<Product>> Get( int id, CancellationToken cancellationToken)
+        public async Task<ActionResult<ProductDto>> Get( int id, CancellationToken cancellationToken)
         {
             return Ok(await Mediatr.Send(new GetProductQuery(id), cancellationToken));
         }

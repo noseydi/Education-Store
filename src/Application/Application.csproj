@@ -22,10 +22,8 @@
   <ItemGroup>
     <Folder Include="Dtos\ProductTypes\" />
     <Folder Include="Dtos\ProductBrands\" />
-    <Folder Include="Dtos\Products\" />
     <Folder Include="Features\Products\Commands\" />
     <Folder Include="Interfaces\" />
-    <Folder Include="Common\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -33,6 +31,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
     <PackageReference Include="MediatR" Version="12.3.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.20" />
   </ItemGroup>
