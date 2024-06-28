@@ -20,10 +20,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Dtos\ProductTypes\" />
+    <Folder Include="Dtos\ProductBrands\" />
+    <Folder Include="Dtos\Products\" />
     <Folder Include="Features\Products\Commands\" />
     <Folder Include="Interfaces\" />
     <Folder Include="Common\" />
-    <Folder Include="Dtos\" />
   </ItemGroup>
 
   <ItemGroup>

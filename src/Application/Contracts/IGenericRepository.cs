@@ -21,7 +21,7 @@ namespace Application.Contracts
         Task<bool> AnyAsync(Expression<Func<T, bool>> expression , CancellationToken cancellationToken);
         Task<bool> AnyAsync(CancellationToken cancellationToken);
         //specification 
-        Task<T> GetEntityWithSpec(ISpecification<T> spec);
-        Task<IReadOnlyList<T>> ListAsyncSpec(ISpecification<T> spec);
+        Task<T> GetEntityWithSpec(ISpecification<T> spec , CancellationToken cancellationToken);
+        Task<IReadOnlyList<T>> ListAsyncSpec(ISpecification<T> spec, CancellationToken cancellationToken   );
     }
 }

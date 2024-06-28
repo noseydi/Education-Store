@@ -1,4 +1,5 @@
 ﻿using Application.Contracts;
+using Application.Features.ProductBrands.Queries.GetAll;
 using Domain.Entities;
 using MediatR;
 using System;
@@ -9,17 +10,20 @@ using System.Threading.Tasks;
 
 namespace Application.Features.Products.Queries.GetAll
 {
-    public class GetAllProductHandler : IRequestHandler<GetAllProductQuery,IEnumerable<Product>>
+    public class GetAllProductQueryHandler : IRequestHandler<GetAllProductQuery,IEnumerable<Product>>
     {
         private readonly IUnitOfWork _uow;
-        public GetAllProductHandler(IUnitOfWork uow)
+        public GetAllProductQueryHandler(IUnitOfWork uow)
         {
             _uow = uow;
         }
 
         public async Task<IEnumerable<Product>> Handle(GetAllProductQuery request , CancellationToken cancellationToken)
         {
-            return await _uow.Repository<Product>().GetAllAsync(cancellationToken);
+            // return await _uow.Repository<Product>().GetAllAsync(cancellationToken);
+            var spec = new GetAllProductSpec();
+            return await _uow.Repository<Product>().ListAsyncSpec(spec, cancellationToken);
+
         }
 
     }

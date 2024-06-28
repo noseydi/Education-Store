@@ -12,6 +12,6 @@ namespace Application.Contracts
     {
         DbContext context { get; }
         Task<int> Save(CancellationToken cancellationToken);
-         IGenericRepository<T> Repository<T>() where T : BaseEntity;
+        public IGenericRepository<T> Repository<T>() where T : BaseEntity;
     }
 }

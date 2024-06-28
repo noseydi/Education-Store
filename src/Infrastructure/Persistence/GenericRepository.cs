@@ -65,14 +65,18 @@ namespace Infrastructure.Persistence
             throw new NotImplementedException();
         }
 
-        Task<T> IGenericRepository<T>.GetEntityWithSpec(ISpecification<T> spec)
+        async Task<T> IGenericRepository<T>.GetEntityWithSpec(ISpecification<T> spec , CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            return await ApplySpecification(spec).FirstOrDefaultAsync(cancellationToken);
         }
 
-        Task<IReadOnlyList<T>> IGenericRepository<T>.ListAsyncSpec(ISpecification<T> spec)
+        async Task<IReadOnlyList<T>> IGenericRepository<T>.ListAsyncSpec(ISpecification<T> spec, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            return await ApplySpecification(spec).ToListAsync(cancellationToken);
+        }
+        private IQueryable<T> ApplySpecification(ISpecification<T> specification)
+        { 
+            return SpecificationEvaluator<T>.GetQuery(_dbset.AsQueryable() , specification);
         }
     }
 }
