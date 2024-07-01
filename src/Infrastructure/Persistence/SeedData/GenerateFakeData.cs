@@ -51,14 +51,27 @@ namespace Infrastructure.Persistence.SeedData
                     new()
                     {
                         Description = "",
-                        Title= "Title",
+                        Title= "Bag 1",
                         Summary =   "summary",
                         Price=15000,
-                        PictureUrl="",
+                        PictureUrl="11.jpeg",
                            ProductTypeId=3,
  ProductBrandId=3,
-  Name="product1",
+  Name="Bag 1",
    
+
+                    },
+                     new()
+                    {
+                        Description = "",
+                        Title= "Bag 2",
+                        Summary =   "summary",
+                        Price=15000,
+                        PictureUrl="12.jpeg",
+                           ProductTypeId=3,
+ ProductBrandId=3,
+  Name="Bag 2",
+
 
                     }
                     };
@@ -91,13 +104,13 @@ namespace Infrastructure.Persistence.SeedData
                     new()
                     {
                         Description = "type 1_ shoes",
-                        Title= "Title",
+                        Title= "type 1",
                         Summary =   "summary type 1 ",
                     },
                       new()
                     {
                         Description = "type 2 _ bags",
-                        Title= "Title",
+                        Title= "type 2",
                         Summary =   "summary type 2",
                       }
                     };

@@ -17,7 +17,12 @@ namespace Application.Features.Products.Queries.Get
 
      {
          private readonly IUnitOfWork _uow;
-        private IMapper _mapper;
+        private readonly IMapper _mapper;
+
+        public GetProductqueryHandler()
+        {
+            
+        }
         public GetProductqueryHandler(IUnitOfWork uow , IMapper mapper)
         {
             _uow = uow;

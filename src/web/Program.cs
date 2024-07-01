@@ -17,9 +17,9 @@ builder.Services.AddApplicationServices();
 
 builder.Services.AddInfrastructureServices(builder.Configuration);
 builder.AddWebConfigureService(builder.Configuration);
-//builder.Services.ConfigureAutoMappers();
-
+//object value = builder.Services.ConfigureAutoMappers();
 var app = builder.Build();
+app.UseStaticFiles();
 await app.AddWebAppService().ConfigureAwait(false);
 
 

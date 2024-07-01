@@ -15,7 +15,11 @@ namespace Application.Features.Products.Queries.GetAll
     public class GetAllProductQueryHandler : IRequestHandler<GetAllProductQuery,IEnumerable<ProductDto>>
     {
         private readonly IUnitOfWork _uow;
-        private readonly IMapper _mapper; 
+        private readonly IMapper _mapper;
+        public GetAllProductQueryHandler()
+        {
+            
+        }
         public GetAllProductQueryHandler(IUnitOfWork uow , IMapper mapper )
         {
             _uow = uow;
